@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Club Managment System</title>
+    <link rel="stylesheet" href="index.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script>
+      function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("isactive");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img src="/csec.jpg" alt="" /> 
+              <span class="nav-item">DashBoard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="openCity('a')">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Home</span>
+            </a>
+          </li>
+          <li>
+            <a class="w3-bar-item w3-button" onclick="openCity('b')">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a class="w3-bar-item w3-button" onclick="openCity('c')">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">Analytics</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="w3-bar-item w3-button" onclick="openCity('e')">
+              <i class="fas fa-tasks"></i>
+              <span class="nav-item">Events</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="w3-bar-item w3-button" onclick="openCity('d')">
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Log out</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section id="a" style="display: block" class="main isactive">
+        <div class="main-top">
+          <h1>DashBoard</h1>
+          <i class="fas fa-user-cog"></i>
+        </div>
+        <div class="main-skills">
+          <div class="card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>100</h3>
+            <p>CPD Students.</p>
+            <button>Get Started</button>
+          </div>
+          <div class="card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>150</h3>
+            <p>DEV Students.</p>
+            <button>Get Started</button>
+          </div>
+          <div class="card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>70</h3>
+            <p>CBD Students</p>
+            <button>Get Started</button>
+          </div>
+        </div>
+
+        <section class="main-course">
+          <h1>Weekly Schedule</h1>
+          <div class="course-box">
+            <div class="course">
+              <div class="box">
+                <h3>Contest</h3>
+                <!-- <p>80% - progress</p> -->
+                <button>continue</button
+                ><i
+                  style="font-size: 42px; padding: 30px"
+                  class="fas fa-laptop-code js"
+                ></i>
+              </div>
+              <div class="box">
+                <h3>Contest Analysis</h3>
+                <!-- <p>50% - progress</p> -->
+                <button>continue</button>
+                <i
+                  style="font-size: 42px; padding: 30px"
+                  class="fas fa-laptop-code js"
+                ></i>
+              </div>
+              <div class="box">
+                <h3>Tutorial</h3>
+                <!-- <p>30% - progress</p> -->
+                <button>continue</button>
+                <i
+                  style="font-size: 42px; padding: 30px"
+                  class="fas fa-laptop-code js"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="b" style="display: none" class="main isactive">
+        <h2 style="text-align: center">User Profile Card</h2>
+
+        <div class="card">
+          <img src="./user.jpg" alt="John" style="width: 100%" />
+          <h1>Mohammed M</h1>
+          <p class="title">CS 4th year student</p>
+          <p> Astu</p>
+          <div style="margin: 24px 0">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </div>
+          <p><button>Contact</button></p>
+        </div>
+      </section>
+      <section id="c" style="display: none" class="main isactive">
+        <canvas id="myChart" style="width: 100%; max-width: 600px"></canvas>
+        <canvas id="myChart2" style="width: 100%; max-width: 300px"></canvas>
+      </section>
+
+      <section id="d" style="display: none" class="main isactive">
+        <h3>Help</h3>
+
+        <div class="container">
+          <form>
+            <label for="fname">First Name</label>
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Your name.."
+            />
+
+            <label for="lname">Last Name</label>
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="Your last name.."
+            />
+
+            <label for="country">Department</label>
+            <select id="country" name="country">
+              <option value="australia">CSE</option>
+              <option value="canada">SE</option>
+              <option value="uk">ECE</option>
+              <option value="usa">Power</option>
+            </select>
+
+            <label for="subject">Subject</label>
+            <textarea
+              id="subject"
+              name="subject"
+              placeholder="Write something.."
+              style="height: 200px"
+            ></textarea>
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </section>
+
+      <section id="e" style="display: none" class="main isactive">
+        <div class="leftBox">
+          <div class="content">
+            <h1>Blog</h1>
+            <p>
+              At CSEC ASTU Study Club, we believe in nurturing a community that thrives on intellectual growth and academic excellence. Join us for our thrilling events, including the Thursday Contest, Thursday Contest Analysis, and Saturday Lecture Series. Discover your full potential, sharpen your skills, and connect with like-minded individuals who share your passion for learning. Be a part of our community and embark on a journey of continuous improvement. Stay tuned for more exciting events to come!
+            </p>
+          </div>
+        </div>
+        <div class="events">
+          <ul>
+            <li>
+              <div class="time">
+                <h2> 7:30 <br /><span>Tuesday</span></h2>
+              </div>
+              <div class="details">
+                <h3>Contest</h3>
+                <p>Show your skill</p>
+                <a href="#">View Details</a>
+              </div>
+              <div style="clear: both"></div>
+            </li>
+            <li>
+              <div class="time">
+                <h2>2:30<br /><span>Thursday</span></h2>
+              </div>
+              <div class="details">
+                <h3>Contest Analaysis</h3>
+                <p>
+                 systematic evaluation of past contests or competitions to gain insights and identify patterns 
+                </p>
+
+                <a href="#">View Details</a>
+              </div>
+              <div style="clear: both"></div>
+            </li>
+            <li>
+              <div class="time">
+                <h2>3:00 <br /><span>Saturday</span></h2>
+              </div>
+              <div class="details">
+                <h3>Lecture</h3>
+                <p>
+                  learn new things and builld your self
+                </p>
+                <a href="#">View Details</a>
+              </div>
+              <div style="clear: both"></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <script>
+        var xValues = ["CPD", "CBD", "DEV"];
+        var yValues = [55, 49, 44];
+        var barColors = ["red", "green", "blue"];
+
+        new Chart("myChart", {
+          type: "bar",
+          data: {
+            labels: xValues,
+            datasets: [
+              {
+                backgroundColor: barColors,
+                data: yValues,
+              },
+            ],
+          },
+          options: {
+            legend: { display: true },
+            title: {
+              display: true,
+              text: "Total Member",
+            },
+          },
+        });
+
+        new Chart("myChart2", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [
+              {
+                backgroundColor: barColors,
+                data: yValues,
+              },
+            ],
+          },
+          options: {
+            legend: { display: true },
+            title: {
+              display: true,
+              text: "Total Member",
+            },
+          },
+        });
+      </script>
+    </div>
+  </body>
+</html>
